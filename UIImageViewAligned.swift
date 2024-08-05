@@ -240,7 +240,7 @@ open class UIImageViewAligned: UIView {
         // Make sure we clear the contents of this container layer, since it refreshes from the image property once in a while.
         layer.contents = nil
         if #available(tvOS 11, iOS 11, *) {
-            super.image = UIImage()
+            imageView?.image = UIImage()
         }
 
     }
