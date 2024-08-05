@@ -194,9 +194,9 @@ open class UIImageViewAligned: UIView {
         super.didMoveToWindow()
         layer.contents = nil
         if #available(tvOS 11, iOS 11, *) {
-            let currentImage = realImageView?.image
+            let currentImage = imageView?.image
             image = UIImage()
-            realImageView?.image = currentImage
+            imageView?.image = currentImage
         }
     }
 
@@ -235,7 +235,7 @@ open class UIImageViewAligned: UIView {
             realFrame.origin.y = bounds.maxY - realFrame.size.height
         }
         
-        realImageView?.frame = realFrame.integral
+        imageView?.frame = realFrame.integral
         
         // Make sure we clear the contents of this container layer, since it refreshes from the image property once in a while.
         layer.contents = nil
